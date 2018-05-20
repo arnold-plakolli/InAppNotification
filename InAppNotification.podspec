@@ -12,5 +12,4 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/plakolliarnold/InAppNotification.git", :tag => "#{s.version}"}
   s.framework = "UIKit"
   s.source_files = "InAppNotification/**/*.{swift}"
-  s.resources = "InAppNotification/**/*.{png,jpeg,jpg,storyboard,xib}"
 end
