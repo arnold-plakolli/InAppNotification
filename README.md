@@ -39,20 +39,21 @@ import InsideAppNotification
 ```
 
 ```swift
-let data: [String: Any] = [
-    "conversationID": UUID().uuidString.lowercased()
-]
+let data: [String: Any] = []
 
 let notification: InAppNotification = InAppNotification(
-	picture: #imageLiteral(resourceName: "steve_jobs"), 
-	title: "Steve Jobs", 
-	subtitle: "I have a new idea I wanna talk to you about", 
+	picture: UIImage(named: "image_name"),
+	title: "Notification title", 
+	subtitle: "Notification details", 
 	data: data
 )
 
-InAppNotificationDispatcher.shared.show(notification: notification) { (_notification) in
-    print("Notification Data: \(_notification.data)")
-}
+InAppNotificationDispatcher.shared.show(
+    notification: notification,
+    clickCallback: { (_notification) in
+        print("Notification clicked. Data: \(_notification.data)")
+    }
+)
 ```
 
 ## License
