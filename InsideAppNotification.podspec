@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.name = "InsideAppNotification"
   s.summary = "InAppNotification shows notification inside of an iOS app."
   s.requires_arc = true
-  s.version = "0.1.0"
+  s.version = "0.2.0"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = { "Arnold Plakolli" => "plakolliarnold@gmail.com" }
   s.homepage = "https://github.com/plakolliarnold/InAppNotification"

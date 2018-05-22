@@ -41,8 +41,10 @@ import InsideAppNotification
 ```swift
 let data: [String: Any] = []
 
+let resource: URL = URL(string: "some_url_here") // You can also put here UIImage or Data that can be converted to UIImage
+
 let notification: InAppNotification = InAppNotification(
-	picture: UIImage(named: "image_name"),
+	resource: resource,
 	title: "Notification title", 
 	subtitle: "Notification details", 
 	data: data
