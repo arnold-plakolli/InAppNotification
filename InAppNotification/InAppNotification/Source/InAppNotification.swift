@@ -9,13 +9,13 @@
 import UIKit
 
 public struct InAppNotification {
-    public let picture: UIImage?
+    public let resource: Any?
     public let title: String
     public let subtitle: String
     public let data: [String: Any]
     
-    public init(picture: UIImage?, title: String, subtitle: String, data: [String: Any] = [:]) {
-        self.picture = picture
+    public init(resource: Any?, title: String, subtitle: String, data: [String: Any] = [:]) {
+        self.resource = resource
         self.title = title
         self.subtitle = subtitle
         self.data = data

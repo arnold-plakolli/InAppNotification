@@ -109,9 +109,32 @@ class InAppNotificationBanner: CustomizedView {
     var notification: InAppNotification?
     
     func updateUI() {
-        self.pictureImageView.image = notification?.picture
         self.titleLabel.text = notification?.title
         self.detailsLabel.text = notification?.subtitle
+        
+        if let url = notification?.resource as? URL {
+            DispatchQueue.global(qos: .userInteractive).async {
+                if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                    DispatchQueue.main.async { [weak self] in
+                        if url.absoluteString == (self?.notification?.resource as? URL)?.absoluteString {
+                            self?.pictureImageView.image = image
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async { [weak self] in
+                        if url.absoluteString == (self?.notification?.resource as? URL)?.absoluteString {
+                            self?.pictureImageView.image = UIImage(named: "notification_placeholder", in: Utils.shared.bundle, compatibleWith: nil)
+                        }
+                    }
+                }
+            }
+        } else if let image = notification?.resource as? UIImage {
+            self.pictureImageView.image = image
+        } else if let data = notification?.resource as? Data, let image = UIImage(data: data) {
+            self.pictureImageView.image = image
+        } else {
+            self.pictureImageView.image = UIImage(named: "notification_placeholder", in: Utils.shared.bundle, compatibleWith: nil)
+        }
     }
     
     static let height: CGFloat = 106
