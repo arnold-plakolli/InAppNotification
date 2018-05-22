@@ -8,6 +8,9 @@
 
 import Foundation
 
-struct Utils {
-    static let appBundleId: String = "com.arnold.InAppNotification"
+class Utils {
+    static let shared = Utils()
+    private init() {}
+    
+    var bundle: Bundle { return Bundle(for: type(of: self)) }
 }

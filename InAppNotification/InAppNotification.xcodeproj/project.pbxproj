@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2411244D20B40F75009E48AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2411244C20B40F75009E48AF /* Images.xcassets */; };
 		6050997120AF9755004365EB /* InAppNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 6050996F20AF9755004365EB /* InAppNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6050998620AF985B004365EB /* CustomizedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6050997F20AF985A004365EB /* CustomizedView.swift */; };
 		6050998720AF985B004365EB /* InAppNotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6050998020AF985B004365EB /* InAppNotificationBanner.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2411244C20B40F75009E48AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6050996C20AF9755004365EB /* InAppNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InAppNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6050996F20AF9755004365EB /* InAppNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppNotification.h; sourceTree = "<group>"; };
 		6050997020AF9755004365EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2411244B20B40F5D009E48AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2411244C20B40F75009E48AF /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6050996220AF9755004365EB = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 				6050998420AF985B004365EB /* InAppNotification.swift */,
 				6050997A20AF976F004365EB /* Utils */,
 				60D37F3A20B1BE9D0058F046 /* Views */,
+				2411244B20B40F5D009E48AF /* Resources */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2411244D20B40F75009E48AF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
