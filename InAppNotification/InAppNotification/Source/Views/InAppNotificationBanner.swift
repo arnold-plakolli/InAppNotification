@@ -23,7 +23,7 @@ class InAppNotificationBanner: CustomizedView {
         view.clipsToBounds = true
         view.backgroundColor = UIColor(r: 0, g: 149, b: 218, a: 200)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = UIViewContentMode.scaleAspectFill
+        view.contentMode = UIView.ContentMode.scaleAspectFill
         view.cornerRadius = 20
         return view
     }()

@@ -62,7 +62,7 @@ public class InAppNotificationDispatcher {
     private func showBanner(_ completion: @escaping () -> ()) {
         bannerWindow = initializeNewWindow()
         setup(window: bannerWindow, for: UIApplication.shared.statusBarOrientation, in: UIDevice.current.userInterfaceIdiom)
-        bannerWindow.makeKeyAndVisible()
+        bannerWindow.isHidden = false
         
         banner.alpha = 0.0
         bannerWindow.addSubview(banner)
@@ -72,7 +72,7 @@ public class InAppNotificationDispatcher {
 
         bannerConstraints[0].constant = 0
         animator?.stopAnimation(true)
-        animator = UIViewPropertyAnimator(duration: animationDuration, curve: UIViewAnimationCurve.linear) {
+        animator = UIViewPropertyAnimator(duration: animationDuration, curve: UIView.AnimationCurve.linear) {
             self.banner.alpha = 1.0
             self.bannerWindow.layoutIfNeeded()
         }
@@ -89,7 +89,7 @@ public class InAppNotificationDispatcher {
         animator?.stopAnimation(true)
         
         if animated {
-            animator = UIViewPropertyAnimator(duration: animationDuration, curve: UIViewAnimationCurve.linear) {
+            animator = UIViewPropertyAnimator(duration: animationDuration, curve: UIView.AnimationCurve.linear) {
                 self.banner.alpha = 0.0
                 self.bannerWindow.layoutIfNeeded()
             }
@@ -116,7 +116,7 @@ public class InAppNotificationDispatcher {
     
     // MARK: - Setup
     private func setupListeners() {
-        NotificationCenter.default.addObserver(self, selector: #selector(statusBarDidChangeFrame(_:)), name: NSNotification.Name.UIApplicationDidChangeStatusBarFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(statusBarDidChangeFrame(_:)), name: UIApplication.didChangeStatusBarFrameNotification, object: nil)
     }
 
     private func startTimer(timeInterval: TimeInterval, callback: @escaping () -> ()) -> Timer {
@@ -128,7 +128,7 @@ public class InAppNotificationDispatcher {
     private func initializeNewWindow() -> UIWindow {
         let window = UIWindow(frame: .zero)
         window.backgroundColor = UIColor.clear
-        window.windowLevel = UIWindowLevelAlert
+        window.windowLevel = UIWindow.Level.alert
         return window
     }
     
