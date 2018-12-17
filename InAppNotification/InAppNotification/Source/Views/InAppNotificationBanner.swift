@@ -139,4 +139,5 @@ class InAppNotificationBanner: CustomizedView {
     
     static let height: CGFloat = 106
     static let top: CGFloat = 5
+    static let leadingTrailingConstant: CGFloat = 20.0
 }
