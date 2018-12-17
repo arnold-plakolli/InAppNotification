@@ -142,13 +142,13 @@ public class InAppNotificationDispatcher {
         var constraints: [NSLayoutConstraint] = []
         if #available(iOS 11.0, *) {
             constraints.append(banner.topAnchor.constraint(equalTo: bannerWindow.safeAreaLayoutGuide.topAnchor, constant: -InAppNotificationBanner.height))
-            constraints.append(banner.leadingAnchor.constraint(equalTo: bannerWindow.safeAreaLayoutGuide.leadingAnchor, constant: 0))
-            constraints.append(banner.trailingAnchor.constraint(equalTo: bannerWindow.safeAreaLayoutGuide.trailingAnchor, constant: 0))
+            constraints.append(banner.leadingAnchor.constraint(equalTo: bannerWindow.safeAreaLayoutGuide.leadingAnchor, constant: InAppNotificationBanner.leadingTrailingConstant))
+            constraints.append(banner.trailingAnchor.constraint(equalTo: bannerWindow.safeAreaLayoutGuide.trailingAnchor, constant: -InAppNotificationBanner.leadingTrailingConstant))
             constraints.append(banner.heightAnchor.constraint(equalToConstant: InAppNotificationBanner.height))
         } else {
             constraints.append(banner.topAnchor.constraint(equalTo: bannerWindow.topAnchor, constant: -InAppNotificationBanner.height))
-            constraints.append(banner.leadingAnchor.constraint(equalTo: bannerWindow.leadingAnchor, constant: 0))
-            constraints.append(banner.trailingAnchor.constraint(equalTo: bannerWindow.trailingAnchor, constant: 0))
+            constraints.append(banner.leadingAnchor.constraint(equalTo: bannerWindow.leadingAnchor, constant: InAppNotificationBanner.leadingTrailingConstant))
+            constraints.append(banner.trailingAnchor.constraint(equalTo: bannerWindow.trailingAnchor, constant: -InAppNotificationBanner.leadingTrailingConstant))
             constraints.append(banner.heightAnchor.constraint(equalToConstant: InAppNotificationBanner.height))
         }
         return constraints
